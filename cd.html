@@ -12,26 +12,36 @@
         background-color: #1f1f7e;
         color: aliceblue;
     }
+    .a{
+        font-weight: bold;
+    }
+    td{
+        width: 200px;
+    }
+    #t{
+        width: 100px;
+    }
+
 </style>
 <body>
     <table>
         <tr>
-            <td> Amount</td>
-            <td>From Currency</td>
-            <td>To Currency</td>
+            <td class="a"> Amount</td>
+            <td class="a">From Currency</td>
+            <td class="a">To Currency</td>
             <td></td>
         </tr>
         <tr>
             <td><input type="number " id="gt" value="" ></td>
             <td>
-                <select name="in" id="form">
+                <select name="in" id="form" style="width:50% " >
                     <option value="VND">VND</option>
                     <option value="USD">USD</option>
                     <option value="Cent">Cent</option>
                 </select>
             </td>
-            <td>
-                <select name="out" id="to">
+            <td >
+                <select name="out" id="to" style="width: 50%">
                     <option value="VND">VND</option>
                     <option value="USD">USD</option>
                     <option value="Cent">Cent</option>
@@ -42,7 +52,7 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td id="t">
                 <p id="result" ></p>
             </td>
         </tr>
