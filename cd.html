@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rwed</title>
+</head>
+<style>
+    #result{
+        color: blue;
+    }
+    #v{
+        background-color: #1f1f7e;
+        color: aliceblue;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <td> Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="number " id="gt" value="" ></td>
+            <td>
+                <select name="in" id="form">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                    <option value="Cent">Cent</option>
+                </select>
+            </td>
+            <td>
+                <select name="out" id="to">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                    <option value="Cent">Cent</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="doi()" id="v">Convert</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="result" ></p>
+            </td>
+        </tr>
+    </table>
+<script>
+    function doi(){
+        let a= document.getElementById('gt').value
+        let b= document.getElementById('form').value
+        let c= document.getElementById('to').value
+        if (b == "VND")
+            if ( c == "VND") document.getElementById('result').innerHTML="Result: "+a+"VND"
+                else if (c == "USD") document.getElementById('result').innerHTML="Result: "+ a*20+"USD"
+                    else document.getElementById('result').innerHTML="Result: "+ a*10+"Cent"
+        if (b == "USD")
+            if ( c == "USD") document.getElementById('result').innerHTML="Result: "+a+"USD"
+                else if (c == "VND") document.getElementById('result').innerHTML="Result: "+ a/20+"VND"
+                    else document.getElementById('result').innerHTML="Result: "+ a/2+"Cent"
+        if (b == "Cent")
+            if ( c == "Cent") document.getElementById('result').innerHTML="Result: "+a+"Cent"
+                else if (c == "VND") document.getElementById('result').innerHTML="Result: "+ a/10+"VND"
+                    else document.getElementById('result').innerHTML="Result: "+ a*2+"USD"
+    }
+</script>
+
+</body>
+</html>
